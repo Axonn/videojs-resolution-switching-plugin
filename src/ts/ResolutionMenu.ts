@@ -1,17 +1,15 @@
-///<reference path='../../../definitions/VideoJS.d.ts'/>
-///<reference path='../../../definitions/JQuery.d.ts'/> 
+///<reference path='../definitions/VideoJS.d.ts'/>
+///<reference path='../definitions/JQuery.d.ts'/> 
 ///<reference path='ResolutionMenuItem.ts'/>
-///<reference path='ResolutionMenu.ts'/>
-///<reference path='../vjsplugin/Menu.ts'/>
-///<reference path='../vjsplugin/IPlayer.ts'/>
+///<reference path='../../bower_components/videojs-plugin-components/vjsplugincomponents.d.ts'/>
 
 module ResolutionSwitching {
-    export class ResolutionMenu extends VjsPlugin.Menu {
+    export class ResolutionMenu extends VjsPluginComponents.Menu {
         kind: string = "quality";
         className: string = "vjs-quality-button";
         buttonText: string = "";
 
-        constructor(player: VjsPlugin.IPlayer) {
+        constructor(player: VjsPluginComponents.IPlayer) {
             super(player);
 
             var listItem = jQuery(document.createElement("li")).addClass("vjs-menu-title").html(this.kind);

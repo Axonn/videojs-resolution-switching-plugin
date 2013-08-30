@@ -1,18 +1,16 @@
-///<reference path='../../../definitions/VideoJS.d.ts'/>
-///<reference path='../../../definitions/JQuery.d.ts'/>
-///<reference path='../vjsplugin/IPlayer.ts'/>
-///<reference path='../vjsplugin/Player.ts'/>
-///<reference path='../vjsplugin/MenuItem.ts'/>
+///<reference path='../definitions/VideoJS.d.ts'/>
+///<reference path='../definitions/JQuery.d.ts'/>
+///<reference path='../../bower_components/videojs-plugin-components/vjsplugincomponents.d.ts'/>
 
 module ResolutionSwitching {
-    export class ResolutionMenuItem extends VjsPlugin.MenuItem {
-        label;
+    export class ResolutionMenuItem extends VjsPluginComponents.MenuItem {
+        label: string;
         _options: any;
-        _player: VjsPlugin.IPlayer;
-        _selected: bool;
-        _source: VjsPlugin.IVideoSource;
+        _player: VjsPluginComponents.IPlayer;
+        _selected: boolean;
+        _source: VjsPluginComponents.IVideoSource;
 
-        constructor(player: VjsPlugin.IPlayer, source: VjsPlugin.IVideoSource) {
+        constructor(player: VjsPluginComponents.IPlayer, source: VjsPluginComponents.IVideoSource) {
             this.label = source.resolution + 'p';
             this._source = source;
 
@@ -30,7 +28,7 @@ module ResolutionSwitching {
             }
         }
 
-        selected(isSelected?: bool) {
+        selected(isSelected?: boolean) {
             if (isSelected === undefined) {
                 return this._selected;
             } else {
@@ -74,6 +72,6 @@ module ResolutionSwitching {
                 className: 'vjs-menu-item',
                 innerHTML: this.label
             }, props));
-        };
+        }
     }
 }

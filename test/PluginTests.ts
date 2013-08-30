@@ -1,17 +1,13 @@
-/// <reference path="../../../definitions/Jasmine.d.ts" />
-/// <reference path="../../../definitions/VideoJS.d.ts" />
-/// <reference path="../../../definitions/JQuery.d.ts" />
+/// <reference path="../src/definitions/Jasmine.d.ts" />
+/// <reference path="../src/definitions/VideoJS.d.ts" />
+/// <reference path="../src/definitions/JQuery.d.ts" />
 /// <chutzpah_reference path="../../../local/video.js" />
 /// <chutzpah_reference path="../../../lib/JQuery/jquery-1.9.1.js" />
-/// <reference path="../../../local/plugins/vjsplugin/VideoSource.ts" />
-/// <reference path="../../../local/plugins/vjsplugin/IVideoSource.ts" />
-/// <reference path="../../../local/plugins/resolutionswitching/ResolutionSelectionButton.ts" />
-/// <reference path="../../../local/plugins/vjsplugin/IPlayer.ts" />
-/// <reference path="../../../local/plugins/vjsplugin/Player.ts" />
+/// <reference path="../src/ts/ResolutionSelectionButton.ts" />
 
 describe("resolution plugin", function () {
     it("adds button to controlbar", function () {
-        var source: VjsPlugin.IVideoSource = {
+        var source: VjsPluginComponents.IVideoSource = {
             type: "mp4",
             src: "URL",
             resolution: "240"
@@ -29,7 +25,7 @@ describe("resolution plugin", function () {
                 resolution: "480"
             }]);
 
-        var player: VjsPlugin.IPlayer = {
+        var player: VjsPluginComponents.IPlayer = {
             id: jasmine.createSpy("player.id"),
             setVideo: jasmine.createSpy("player.setVideo"),
             getVideo: jasmine.createSpy("player.getVideo").andReturn(

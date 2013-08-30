@@ -14,7 +14,11 @@ module.exports = function (grunt) {
 		  src: "build/js/vjsresolutionswitchingplugin.js",
 		  options: {
 			specs: "build/test/vjsresolutionswitchingplugintests.js",
-			vendor: "components/jquery/jquery.min.js",
+			vendor: [ 
+			  "bower_components/jquery/jquery.min.js",
+			  "bower_components/videojs-plugin-components/vjsplugincomponents.js",
+			  "bower_components/video.js/video.js"
+			]
 		  }
 	  }
     },

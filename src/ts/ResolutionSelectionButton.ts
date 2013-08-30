@@ -1,19 +1,19 @@
-///<reference path='../../../definitions/VideoJS.d.ts'/>
-///<reference path='../../../definitions/JQuery.d.ts'/> 
+///<reference path='../definitions/VideoJS.d.ts'/>
+///<reference path='../definitions/JQuery.d.ts'/> 
 ///<reference path='ResolutionMenuItem.ts'/>
 ///<reference path='ResolutionMenu.ts'/>
-///<reference path='../vjsplugin/Component.ts'/>
+///<reference path='../../bower_components/videojs-plugin-components/vjsplugincomponents.d.ts'/>
 
 module ResolutionSwitching {
-    export class ResolutionSelectionButton extends VjsPlugin.Component{
+    export class ResolutionSelectionButton extends VjsPluginComponents.Component{
         kind: string;
         className: string;
         buttonText: string;
         menu: ResolutionSwitching.ResolutionMenu;
-        _player: VjsPlugin.IPlayer;
+        _player: VjsPluginComponents.IPlayer;
         _component: _V_.Component;
 
-        constructor(player: VjsPlugin.IPlayer) {
+        constructor(player: VjsPluginComponents.IPlayer) {
             this.kind = "quality";
             this.className = "vjs-quality-button";
             this.buttonText = "";
@@ -31,8 +31,8 @@ module ResolutionSwitching {
                     this.menu = new ResolutionSwitching.ResolutionMenu(this._player);
                     jQuery.each(this.menu.items, (index, item) => {
                         item.on("click", () => {
-                            
-                            this.buttonText = item.label;
+                            var menuItem = <ResolutionMenuItem> item;
+                            this.buttonText = menuItem.label;
                             var element = this.el();
                             var child = jQuery(this.el()).children(".vjs-quality-text");
                             jQuery(this.el()).find(".vjs-quality-text").html(this.buttonText);

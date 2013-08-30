@@ -1,8 +1,7 @@
 ///<reference path='ResolutionSelectionButton.ts'/>
 ///<reference path='ResolutionMenuItem.ts'/>
-///<reference path='../../../definitions/JQuery.d.ts'/>
-///<reference path='../common/Timer.ts'/>
-///<reference path='../common/DateService.ts'/>
+///<reference path='../definitions/JQuery.d.ts'/>
+///<reference path='../../bower_components/videojs-plugin-components/vjsplugincomponents.d.ts'/>
 
 module ResolutionSwitching {
     export class Plugin {
@@ -19,7 +18,7 @@ module ResolutionSwitching {
             //    loadingObserver = new LoadingTimeObserver(this._player, new Common.Timer(window, new Common.DateService()));
             //    this._player.addChild(loadingObserver);
             //}
-            var resolutionSelectionButton = new ResolutionSelectionButton(new VjsPlugin.Player(this._player));
+            var resolutionSelectionButton = new ResolutionSelectionButton(new VjsPluginComponents.Player(this._player));
             var controlBar;
 
             //$.each(children, (index, child) => {
