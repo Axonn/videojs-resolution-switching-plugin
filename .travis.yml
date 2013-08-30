@@ -7,7 +7,7 @@ env:
   global:
   - secure: EyQ+4g03UKWmWZCjWsVpsj1FgYI8YN2ocRBzAwAkgPhN0BAx8BrOvlbKVyHWN/jArNmP/RyTXDeNEb5H/nszgiwptV1K4R3Cvl2Rwy73OUiYMlI5P3BbCdiDcJXwl7YakmO3g+5UEaRjVcXaLq3/awc9h5gdgRA5CrS/CVO/LeM=
   - GH_OWNER: Axonn
-  - GH_PROJECT_NAME: videojs-google-analytics-plugin
+  - GH_PROJECT_NAME: videojs-resolution-switching-plugin
 after_success:
 - if git checkout master; then git checkout -b master; fi
 - cp build/js/vjsresolutionswitchingplugin.js vjsresolutionswitchingplugin.js
