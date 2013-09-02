@@ -5,17 +5,17 @@ before_script:
 - bower install
 env:
   global:
-  - secure: EyQ+4g03UKWmWZCjWsVpsj1FgYI8YN2ocRBzAwAkgPhN0BAx8BrOvlbKVyHWN/jArNmP/RyTXDeNEb5H/nszgiwptV1K4R3Cvl2Rwy73OUiYMlI5P3BbCdiDcJXwl7YakmO3g+5UEaRjVcXaLq3/awc9h5gdgRA5CrS/CVO/LeM=
+  - secure: Gqy7NE9wuJwlabwrfCzcqLhSgXY7N/eiPioigl1RqPVQFHUDTHcjL3vzjev+4CTdtT+B3Vl/XU9a+UgAkBADWL6mL+N6AATw9Vtrc+Z3g6qZJMBCLeUIXcFqhWQl9/eFV0OKbM4UDHGNznnDDAzAwr777cUsKkBVil5pBRaeDgg= 
   - GH_OWNER: Axonn
   - GH_PROJECT_NAME: videojs-resolution-switching-plugin
 after_success:
 - if git checkout master; then git checkout -b master; fi
 - cp build/js/vjsresolutionswitchingplugin.js vjsresolutionswitchingplugin.js
-- cp build/js/vjsresolutionswitchingplugin.d.ts vjsresolutionswitchingplugin.d.ts 
+- cp build/js/vjsresolutionswitchingplugin.d.ts vjsresolutionswitchingplugin.d.ts
 - git add -f vjsresolutionswitchingplugin.js
-- git add -f vjsresolutionswitchingplugin.d.ts 
+- git add -f vjsresolutionswitchingplugin.d.ts
 - git config user.name "travis-ci"
 - git config user.email "corwin.tomkinson@adfero.co.uk"
 - git commit -am "add build files to master [ci skip]"
 - git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:master > /dev/null 2>&1
-  
+
