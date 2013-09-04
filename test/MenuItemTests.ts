@@ -65,6 +65,7 @@ describe("resolution menu item", function () {
             hide: jasmine.createSpy("player.hide"),
             width: jasmine.createSpy("player.width"),
             height: jasmine.createSpy("player.height"),
+			pause: jasmine.createSpy("player.pause"),
             dimensions: jasmine.createSpy("player.dimensions"),
             currentTime: currentTimeSpy,
             techName: jasmine.createSpy("player.techName"),

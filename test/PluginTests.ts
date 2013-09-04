@@ -50,6 +50,7 @@ describe("resolution plugin", function () {
             addChild: jasmine.createSpy("player.addChild"),
             children: jasmine.createSpy("player.children"),
             on: jasmine.createSpy("player.on"),
+			pause: jasmine.createSpy("player.pause"),
             off: jasmine.createSpy("player.off"),
             one: jasmine.createSpy("player.one"),
             trigger: jasmine.createSpy("player.trigger"),
