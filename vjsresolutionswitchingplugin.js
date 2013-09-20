@@ -124,7 +124,7 @@ var ResolutionSwitching;
                 jQuery(this.el()).html('<div><span class="vjs-quality-text">' + this.buttonText + '</span></div>');
                 this.menu = new ResolutionSwitching.ResolutionMenu(this._player);
                 jQuery.each(this.menu.items, function (index, item) {
-                    item.on("click", function () {
+                    jQuery(item.el()).click(function () {
                         var menuItem = item;
                         _this.buttonText = menuItem.label;
                         var element = _this.el();
