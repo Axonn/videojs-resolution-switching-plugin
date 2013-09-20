@@ -9,6 +9,9 @@ env:
   - GH_OWNER: Axonn
   - GH_PROJECT_NAME: videojs-resolution-switching-plugin
 after_success:
+- version=$(head -n 1 version.txt)
+- oldversion=$(git describe --abbrev=0 --tags)
+- if [ "$version" != "$oldversion" ]; then
 - if git checkout master; then git checkout -b master; fi
 - cp build/js/vjsresolutionswitchingplugin.js vjsresolutionswitchingplugin.js
 - cp build/js/vjsresolutionswitchingplugin.d.ts vjsresolutionswitchingplugin.d.ts
@@ -17,6 +20,7 @@ after_success:
 - git config user.name "travis-ci"
 - git config user.email "corwin.tomkinson@adfero.co.uk"
 - git commit -am "add build files to master [ci skip]"
-- git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:master > /dev/null 2>&1
-
+- git tag -a $version -m "new Version released"
+- git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:master --tags > /dev/null 2>&1
+- fi
 
