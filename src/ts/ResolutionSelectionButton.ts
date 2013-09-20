@@ -30,7 +30,7 @@ module ResolutionSwitching {
                     jQuery(this.el()).html('<div><span class="vjs-quality-text">' + this.buttonText + '</span></div>');
                     this.menu = new ResolutionSwitching.ResolutionMenu(this._player);
                     jQuery.each(this.menu.items, (index, item) => {
-                        item.on("click", () => {
+                        jQuery(item.el()).click(() => {
                             var menuItem = <ResolutionMenuItem> item;
                             this.buttonText = menuItem.label;
                             var element = this.el();
