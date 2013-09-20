@@ -5,7 +5,7 @@ before_script:
 - bower install
 env:
   global:
-  - secure: Gqy7NE9wuJwlabwrfCzcqLhSgXY7N/eiPioigl1RqPVQFHUDTHcjL3vzjev+4CTdtT+B3Vl/XU9a+UgAkBADWL6mL+N6AATw9Vtrc+Z3g6qZJMBCLeUIXcFqhWQl9/eFV0OKbM4UDHGNznnDDAzAwr777cUsKkBVil5pBRaeDgg= 
+  - secure: X8a5qqnpKudr1EdTXcj6viHjdi/8KJDPVvbpLnal/E46Wwi9t8siAh2kJIJ/e9Sqi2433KQCYb387wzwf4fL1io4hgaBxoYO/wQO8pgkbArxZKPRWF4XcgY+3GCpfg9T8ZyjP+wVzuEYpv4Y/S4njj2zWDdkiv+96mynnsGvkuI=
   - GH_OWNER: Axonn
   - GH_PROJECT_NAME: videojs-resolution-switching-plugin
 after_success:
@@ -18,4 +18,5 @@ after_success:
 - git config user.email "corwin.tomkinson@adfero.co.uk"
 - git commit -am "add build files to master [ci skip]"
 - git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:master > /dev/null 2>&1
+
 
